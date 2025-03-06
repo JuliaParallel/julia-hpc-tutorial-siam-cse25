@@ -7,7 +7,7 @@ __INSTALL_SH_DIR=$(
 
 source ${__INSTALL_SH_DIR}/activate.sh
 
-mkdir -p /global/homes/b/blaschke/.local/share/jupyter/kernels
+mkdir -p ~/.local/share/jupyter/kernels
 pushd ~/.local/share/jupyter/kernels
     cp -r /global/common/software/nersc9/julia/kernels/rendered/*-beta .
 popd
