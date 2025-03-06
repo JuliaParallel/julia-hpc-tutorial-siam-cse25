@@ -49,16 +49,17 @@ These instructiosn are based on NERSC's
 [official documentation for Jupyter](https://docs.nersc.gov/services/jupyter/) 
 The key difference is that you need to use the `install.sh` script to put the
 Jupyer kernel specs in the location that JupyterHub expects
-(`~/.local/share/jupyter/kernels`). The `install.sh` script is fairly involved
-because it tries to streamline the process by:
+(`~/.local/share/jupyter/kernels`). The `install.sh` script does the following:
 
-1. Gernerating a single-threaded and a multi-threaded kernel (the multi-threaded
+1. Installing a single-threaded and a multi-threaded kernel (the multi-threaded
    kernel is different form the single-threaded case because sets the
-   `JULIA_NUM_THREADS` environment variable) from a template 
-   (`nersc/jupyter/template`)
+   `JULIA_NUM_THREADS` environment variable) into the user environment (where
+   Jupyter Hub expects to find kernels).
 
-2. Generating a `activate.sh` script which activates any customizations to the
-   user shell environment
+2. Intializes the user's Julia environment and makes sure IJulia is installed.
+
+These steps basically make use of the existing Julia infrastructure at NERSC to
+streamline the steps detailed in "Running Locally" below.
 
 ### Step-By-Step Guide for setting up Juputer Kernels at NERSC:
 
@@ -75,13 +76,13 @@ You might not see the bright red “stop” button, and probably fewer rows/colu
 
 4. Clone the tutorial repository:
 ```sh
-git clone https://github.com/JuliaParallel/julia-hpc-tutorial-sc24
+git clone https://github.com/JuliaParallel/julia-hpc-tutorial-siam-cse25.git
 ```
 
 5. Enter the tutorial folder:
 ```sh
-git clone https://github.com/JuliaParallel/julia-hpc-tutorial-sc24
-cd julia-hpc-tutorial-sc24
+git clone https://github.com/JuliaParallel/julia-hpc-tutorial-siam-cse25.git
+cd julia-hpc-tutorial-siam-cse25
 ```
 
 6. Run the install script:
