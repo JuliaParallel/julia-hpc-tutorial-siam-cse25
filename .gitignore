@@ -22,3 +22,13 @@ docs/site/
 # committed for packages, but should be committed for applications that require a static
 # environment.
 Manifest.toml
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints
+
+activate.sh
+deactivate.sh
+ext/GrayScott.jl
+
+
+*.jld2
